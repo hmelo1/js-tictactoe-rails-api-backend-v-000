@@ -1,7 +1,8 @@
 class GamesController < ApplicationController
   # Add your GamesController code here
   def create
-    @game = Game.new
+    @game = Game.create(game_params)
+    render json: @game, status: 201
   end
 
   def show
